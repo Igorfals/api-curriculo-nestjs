@@ -24,23 +24,31 @@ bash
 npm install
 2️⃣ Rodar o servidor
 bash
+
 # Ambiente de desenvolvimento
+
 npm run start
 
 # Modo de observação
+
 npm run start:dev
 
 # Modo de produção
+
 npm run start:prod
 3️⃣ Executar testes
 bash
+
 # Testes unitários
+
 npm run test
 
 # Testes e2e
+
 npm run test:e2e
 
 # Cobertura de testes
+
 npm run test:cov
 📌 Como fazer o Deploy
 Quando estiver pronto para colocar a API em produção, siga as instruções de deploy.
