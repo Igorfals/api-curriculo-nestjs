@@ -3,19 +3,21 @@ import {
   HttpCode,
   HttpStatus,
   Post,
+  Request,
   UseGuards,
 } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
 import { LocalAuthGuard } from './guards/local-auth.guard';
+import { AuthRequest } from './models/auth-request';
+import { AuthService } from './auth.service';
 
 @Controller()
 export class AuthController {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly authService: AuthService) {}
 
   @Post('login')
   @HttpCode(HttpStatus.OK)
   @UseGuards(LocalAuthGuard)
-  login() {
-    return 'Realizar login.';
+  login(@Request() req: AuthRequest) {
+    return this.authService.login(req.user);
   }
 }
